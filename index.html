@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
 
 <script id="hexo-configurations">
@@ -251,6 +251,109 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/03/09/%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98%E7%9A%84%E6%8A%80%E5%B7%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://pic5.58cdn.com.cn/nowater/fangfe/n_v20efe9ef47925400a9abe03cce42d962e.jpg">
+      <meta itemprop="name" content="大米">
+      <meta itemprop="description" content="菜就得多学习">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="猪滴窝窝">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/03/09/%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98%E7%9A%84%E6%8A%80%E5%B7%A7/" class="post-title-link" itemprop="url">苹果官方文档翻译-Tips for Allocating Memory(分配内存的技巧)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-03-09 17:15:06" itemprop="dateCreated datePublished" datetime="2021-03-09T17:15:06+08:00">2021-03-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-03-10 18:19:49" itemprop="dateModified" datetime="2021-03-10T18:19:49+08:00">2021-03-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%8B%B9%E6%9E%9C%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E7%BF%BB%E8%AF%91/" itemprop="url" rel="index"><span itemprop="name">苹果官方文档翻译</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2021/03/09/%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98%E7%9A%84%E6%8A%80%E5%B7%A7/" class="post-meta-item leancloud_visitors" data-flag-title="苹果官方文档翻译-Tips for Allocating Memory(分配内存的技巧)" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/03/09/%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98%E7%9A%84%E6%8A%80%E5%B7%A7/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/03/09/%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98%E7%9A%84%E6%8A%80%E5%B7%A7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>内存是应用的一项重要资源，因此请务必考虑一下应用如何使用内存以及如何正确的分配内存。大部门的应用都不需要做特殊的操作，它们简单的按需分配对象或者内存块，看起来性能上也没有什么损失。对于那种使用大量内存的应用，仔细地规划内存分配策略可以带来很大的区别。</p>
+<p>以下各节描述了分配内存的基本选项以及如何高效分配内存的技巧。首先为了确定应用是否有内存性能问题，我们需要在程序运行的时候使用Xcode工具来查看应用的分配内存方式。更多的信息请参见<a target="_blank" rel="noopener" href="https://developer.apple.com/library/archive/documentation/Performance/Conceptual/ManagingMemory/Articles/FindingPatterns.html#//apple_ref/doc/uid/20001882-CJBJFIDD">Tracking Memory Usage</a>。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/09/%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98%E7%9A%84%E6%8A%80%E5%B7%A7/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
 
@@ -319,7 +422,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-count">2</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
